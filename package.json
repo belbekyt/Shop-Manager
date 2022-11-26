@@ -1,0 +1,16 @@
+{
+  "name": "shopmanager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile-ts": "tsc",
+    "build-css": "tailwindcss build src/css/styles.css -o dist/css/styles.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tailwindcss": "^3.2.4"
+  }
+}
