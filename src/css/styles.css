@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.card{
+    @apply border border-gray-600;
+}
+
+.card-heading{
+    @apply flex justify-between bg-blue-500 text-white text-xl px-3 py-1.5
+}
+
+.card-update{
+    @apply w-7 cursor-pointer;
+}
+
+.card-body{
+    @apply flex p-3;
+}
+
+.card-photo{
+    @apply w-20 mr-6;
+}
+
+.card-link{
+    @apply text-blue-500 cursor-pointer;
+}
