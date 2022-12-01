@@ -1,7 +1,16 @@
-export const renderCostumer = (costumer) => {
+const costumerPhoto = (sex) => {
+    if (sex) {
+        return '<img class="card-photo" src="dist/photo/men.png" alt="men profile picture">';
+    }
+    else {
+        return '<img class="card-photo" src="dist/photo/woman.png" alt="woman profile picture">';
+    }
+};
+const createCostumer = (costumer) => {
     let link = costumerPhoto(costumer.sex);
-    return `
-    <div class"card">
+    const costumerElement = document.createElement("div");
+    costumerElement.classList.add("card");
+    costumerElement.innerHTML = `
         <div class="card-heading">
             <h3>${costumer.name} ${costumer.surname}</h3>
             <svg class="card-update" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -16,14 +25,13 @@ export const renderCostumer = (costumer) => {
                 <p class="card-link">View Orders</p>
             </div>
         </div>
-    </div>
     `;
+    return costumerElement;
 };
-const costumerPhoto = (sex) => {
-    if (sex) {
-        return '<img class="card-photo" src="dist/photo/men.png" alt="men profile picture">';
-    }
-    else {
-        return '<img class="card-photo" src="dist/photo/woman.png" alt="woman profile picture">';
-    }
+export const renderCostumers = (costumers) => {
+    const costumersHolder = document.querySelector("#costumers-holder");
+    costumersHolder.innerHTML = "";
+    costumers.forEach((costumer) => {
+        costumersHolder.appendChild(createCostumer(costumer));
+    });
 };

@@ -1,4 +1,4 @@
-class Costumer{
+export class Costumer{
     name: string;
     surname: string;
     city: string;
