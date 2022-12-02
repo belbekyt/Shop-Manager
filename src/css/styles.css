@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+.card-view-style{
+    @apply grid grid-cols-5 gap-10 w-full px-8 pt-10;
+}
+
+.list-view-style{
+    @apply w-full px-8 pt-10;
+}
+
 .card{
     @apply border border-gray-600;
 }
@@ -24,4 +32,12 @@
 
 .card-link{
     @apply text-blue-500 cursor-pointer;
+}
+
+.card-list{
+    @apply flex border-t border-gray-600 p-5 text-xl
+}
+
+.list-element{
+    @apply p-6;
 }

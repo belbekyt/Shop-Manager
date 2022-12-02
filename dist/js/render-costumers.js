@@ -6,7 +6,7 @@ const costumerPhoto = (sex) => {
         return '<img class="card-photo" src="dist/photo/woman.png" alt="woman profile picture">';
     }
 };
-const createCostumer = (costumer) => {
+const createCostumerCards = (costumer) => {
     let link = costumerPhoto(costumer.sex);
     const costumerElement = document.createElement("div");
     costumerElement.classList.add("card");
@@ -28,10 +28,30 @@ const createCostumer = (costumer) => {
     `;
     return costumerElement;
 };
-export const renderCostumers = (costumers) => {
+const createCostumerLists = (costumer) => {
+    let link = costumerPhoto(costumer.sex);
+    const costumerElement = document.createElement("div");
+    costumerElement.classList.add("card-list");
+    costumerElement.innerHTML = `
+        <p class="list-element">${costumer.id}</p>
+        ${link}
+        <p class="list-element">${costumer.name}</p>
+        <p class="list-element">${costumer.surname}</p>
+        <p class="list-element">${costumer.street}</p>
+        <p class="list-element">${costumer.city}</p>
+        <p class="list-element">${costumer.country}</p>
+    `;
+    return costumerElement;
+};
+export const renderCostumers = (costumers, structure) => {
     const costumersHolder = document.querySelector("#costumers-holder");
     costumersHolder.innerHTML = "";
     costumers.forEach((costumer) => {
-        costumersHolder.appendChild(createCostumer(costumer));
+        if (structure) {
+            costumersHolder.appendChild(createCostumerCards(costumer));
+        }
+        else {
+            costumersHolder.appendChild(createCostumerLists(costumer));
+        }
     });
 };
