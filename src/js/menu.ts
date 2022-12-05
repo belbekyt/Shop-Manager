@@ -3,23 +3,39 @@ const ordersBtn: HTMLElement = document.querySelector("#menu-orders");
 const createOrderBtn: HTMLElement = document.querySelector("#menu-create-order");
 const createCostumerBtn: HTMLElement = document.querySelector("#menu-create-costumer");
 
+const costumersSection: HTMLElement = document.querySelector("#costumers-section");
+const ordersSection: HTMLElement = document.querySelector("#orders-section");
 //idk why but this.id or e.target.id is not working so i can't use foreach
 costumersBtn.addEventListener("click", () => {
     menuHandler(costumersBtn.id);
 })
 
 ordersBtn.addEventListener("click", () => {
-    console.log(ordersBtn.id);
+    menuHandler(ordersBtn.id);
 })
 
 createOrderBtn.addEventListener("click", () => {
-    console.log(createOrderBtn.id);
+    menuHandler(createOrderBtn.id);
 })
 
 createCostumerBtn.addEventListener("click", () => {
-    console.log(createCostumerBtn.id);
+    menuHandler(createCostumerBtn.id);
 })
 
-const menuHandler = (id) => {
-    console.log(id);
+const menuHandler = (id: string) => {
+    switch(id){
+        case "menu-costumers":
+            hide();
+            costumersSection.classList.remove("hidden");
+            break;
+        case "menu-orders":
+            hide();
+            ordersSection.classList.remove("hidden");
+            break;
+    }
+}
+
+const hide = () => {
+    costumersSection.classList.add("hidden");
+    ordersSection.classList.add("hidden");
 }
