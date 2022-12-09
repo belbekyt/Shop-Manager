@@ -625,10 +625,6 @@ video {
   display: contents;
 }
 
-.hidden {
-  display: none;
-}
-
 .h-16 {
   height: 4rem;
 }
@@ -1118,4 +1114,8 @@ video {
 .hover\:bg-blue-600:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(37 99 235 / var(--tw-bg-opacity));
+}
+
+.hidden {
+  display: none;
 }

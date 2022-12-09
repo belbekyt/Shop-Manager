@@ -1,6 +1,8 @@
 import { costumers } from "./costumers.js";
 import { renderCostumers } from "./render-costumers.js";
 
+import { orders } from "./orders.js";
+
 renderCostumers(costumers, true);
 const costumersHolder: HTMLElement = document.querySelector("#costumers-holder");
 
