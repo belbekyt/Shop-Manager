@@ -1,4 +1,4 @@
-class Order {
+export class Order {
     constructor(id, costumerid, total, items) {
         this.orderid = id;
         this.costumerid = costumerid;

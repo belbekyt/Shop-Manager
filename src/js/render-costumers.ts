@@ -1,5 +1,7 @@
 import { Costumer } from "./costumers.js";
 
+const costumersHolder: HTMLElement = document.querySelector("#costumers-holder");
+
 const costumerPhoto = (sex: boolean) => {
     if(sex){
         return '<img class="card-photo" src="dist/photo/men.png" alt="men profile picture">';
@@ -53,7 +55,6 @@ const createCostumerLists = (costumer: Costumer) => {
 }
 
 export const renderCostumers = (costumers: object[], structure: boolean) => {
-    const costumersHolder: HTMLElement = document.querySelector("#costumers-holder");
     costumersHolder.innerHTML = "";
     costumers.forEach((costumer: Costumer) => {
         if(structure){

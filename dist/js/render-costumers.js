@@ -1,3 +1,4 @@
+const costumersHolder = document.querySelector("#costumers-holder");
 const costumerPhoto = (sex) => {
     if (sex) {
         return '<img class="card-photo" src="dist/photo/men.png" alt="men profile picture">';
@@ -44,7 +45,6 @@ const createCostumerLists = (costumer) => {
     return costumerElement;
 };
 export const renderCostumers = (costumers, structure) => {
-    const costumersHolder = document.querySelector("#costumers-holder");
     costumersHolder.innerHTML = "";
     costumers.forEach((costumer) => {
         if (structure) {

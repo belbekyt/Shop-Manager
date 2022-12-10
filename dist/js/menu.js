@@ -1,3 +1,5 @@
+import { renderOrders } from "./render-orders.js";
+import { orders } from "./orders.js";
 const costumersBtn = document.querySelector("#menu-costumers");
 const ordersBtn = document.querySelector("#menu-orders");
 const createOrderBtn = document.querySelector("#menu-create-order");
@@ -34,6 +36,7 @@ const menuHandler = (id) => {
             hide();
             ordersSection.classList.remove("hidden");
             ordersHolder.classList.remove("hidden");
+            renderOrders(orders);
             break;
         case "menu-create-order":
             hide();

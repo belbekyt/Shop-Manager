@@ -1,9 +1,6 @@
-import { Order } from "./orders.js";
-
-const ordersHolder: HTMLElement = document.querySelector("#orders-holder");
-
-const createOrderCard = (order: Order) => {
-    const orderElement: HTMLElement = document.createElement("div");
+const ordersHolder = document.querySelector("#orders-holder");
+const createOrderCard = (order) => {
+    const orderElement = document.createElement("div");
     orderElement.classList.add("card");
     orderElement.innerHTML = `
         <div class="orders-card-heading">Order ${order.orderid}</div>
@@ -13,14 +10,12 @@ const createOrderCard = (order: Order) => {
             <p>Cost: ${order.total} PLN</p>
         </div>
     `;
-
     return orderElement;
-}
-
-export const renderOrders = (orders: object[]) => {
+};
+export const renderOrders = (orders) => {
     console.log("hi");
     ordersHolder.innerHTML = "";
-    orders.forEach((order: Order) => {
+    orders.forEach((order) => {
         ordersHolder.appendChild(createOrderCard(order));
-    })
-}
+    });
+};
