@@ -1,6 +1,8 @@
 import { Costumer } from "./costumers.js";
 
 const costumersHolder: HTMLElement = document.querySelector("#costumers-holder");
+const cardsViewCostumers: HTMLElement = document.querySelector("#card-view-costumers");
+const listViewCostumers: HTMLElement = document.querySelector("#list-view-costumers");
 
 const costumerPhoto = (sex: boolean) => {
     if(sex){
@@ -56,12 +58,24 @@ const createCostumerLists = (costumer: Costumer) => {
 
 export const renderCostumers = (costumers: object[], structure: boolean) => {
     costumersHolder.innerHTML = "";
-    costumers.forEach((costumer: Costumer) => {
-        if(structure){
+    costumersHolder.className = "";
+
+    if(structure){
+        listViewCostumers.classList.remove("text-black");
+        cardsViewCostumers.classList.add("text-black");
+        costumersHolder.classList.add("card-view-style");
+
+        costumers.forEach((costumer: Costumer) => {
             costumersHolder.appendChild(createCostumerCards(costumer));
-        }
-        else{
+        })
+    }
+    else{
+        cardsViewCostumers.classList.remove("text-black");
+        listViewCostumers.classList.add("text-black");
+        costumersHolder.classList.add("list-view-style");
+
+        costumers.forEach((costumer: Costumer) => {
             costumersHolder.appendChild(createCostumerLists(costumer));
-        }
-    })
+        })
+    }
 }

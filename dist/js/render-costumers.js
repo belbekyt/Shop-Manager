@@ -1,4 +1,6 @@
 const costumersHolder = document.querySelector("#costumers-holder");
+const cardsViewCostumers = document.querySelector("#card-view-costumers");
+const listViewCostumers = document.querySelector("#list-view-costumers");
 const costumerPhoto = (sex) => {
     if (sex) {
         return '<img class="card-photo" src="dist/photo/men.png" alt="men profile picture">';
@@ -46,12 +48,22 @@ const createCostumerLists = (costumer) => {
 };
 export const renderCostumers = (costumers, structure) => {
     costumersHolder.innerHTML = "";
-    costumers.forEach((costumer) => {
-        if (structure) {
+    if (structure) {
+        listViewCostumers.classList.remove("text-black");
+        cardsViewCostumers.classList.add("text-black");
+        costumersHolder.className = "";
+        costumersHolder.classList.add("card-view-style");
+        costumers.forEach((costumer) => {
             costumersHolder.appendChild(createCostumerCards(costumer));
-        }
-        else {
+        });
+    }
+    else {
+        cardsViewCostumers.classList.remove("text-black");
+        listViewCostumers.classList.add("text-black");
+        costumersHolder.className = "";
+        costumersHolder.classList.add("list-view-style");
+        costumers.forEach((costumer) => {
             costumersHolder.appendChild(createCostumerLists(costumer));
-        }
-    });
+        });
+    }
 };

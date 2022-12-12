@@ -44,7 +44,7 @@ const menuHandler = (id: string) => {
             hide();
             ordersSection.classList.remove("hidden");
             ordersHolder.classList.remove("hidden");
-            renderOrders(orders);
+            renderOrders(orders, true);
             break;
         case "menu-create-order":
             hide();

@@ -1,4 +1,6 @@
 const ordersHolder = document.querySelector("#orders-holder");
+const cardViewOrders = document.querySelector("#card-view-orders");
+const listViewOrders = document.querySelector("#list-view-orders");
 const createOrderCard = (order) => {
     const orderElement = document.createElement("div");
     orderElement.classList.add("card");
@@ -12,10 +14,34 @@ const createOrderCard = (order) => {
     `;
     return orderElement;
 };
-export const renderOrders = (orders) => {
-    console.log("hi");
+const createOrderList = (order) => {
+    const orderElement = document.createElement("div");
+    orderElement.classList.add("card-list");
+    orderElement.innerHTML = `
+        <p class="list-element">Order ${order.orderid}</p>
+        <p class="list-element">Costumer: ${order.costumerid}</p>
+        <p class="list-element">Items: ${order.items}</p>
+        <p class="list-element">Cost: ${order.total} PLN</p>
+    `;
+    return orderElement;
+};
+export const renderOrders = (orders, structure) => {
     ordersHolder.innerHTML = "";
-    orders.forEach((order) => {
-        ordersHolder.appendChild(createOrderCard(order));
-    });
+    ordersHolder.className = "";
+    if (structure) {
+        listViewOrders.classList.remove("text-black");
+        cardViewOrders.classList.add("text-black");
+        ordersHolder.classList.add("card-view-style");
+        orders.forEach((order) => {
+            ordersHolder.appendChild(createOrderCard(order));
+        });
+    }
+    else {
+        cardViewOrders.classList.remove("text-black");
+        listViewOrders.classList.add("text-black");
+        ordersHolder.classList.add("list-view-style");
+        orders.forEach((order) => {
+            ordersHolder.appendChild(createOrderList(order));
+        });
+    }
 };

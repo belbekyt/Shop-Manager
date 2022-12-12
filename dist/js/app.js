@@ -1,20 +1,21 @@
 import { costumers } from "./costumers.js";
 import { renderCostumers } from "./render-costumers.js";
+import { orders } from "./orders.js";
+import { renderOrders } from "./render-orders.js";
 renderCostumers(costumers, true);
-const costumersHolder = document.querySelector("#costumers-holder");
-const cardsView = document.querySelector("#card-view");
-const listView = document.querySelector("#list-view");
-cardsView.addEventListener("click", () => {
-    listView.classList.remove("text-black");
-    cardsView.classList.add("text-black");
-    costumersHolder.className = "";
-    costumersHolder.classList.add("card-view-style");
+const cardsViewCostumers = document.querySelector("#card-view-costumers");
+const listViewCostumers = document.querySelector("#list-view-costumers");
+const cardViewOrders = document.querySelector("#card-view-orders");
+const listViewOrders = document.querySelector("#list-view-orders");
+cardsViewCostumers.addEventListener("click", () => {
     renderCostumers(costumers, true);
 });
-listView.addEventListener("click", () => {
-    cardsView.classList.remove("text-black");
-    listView.classList.add("text-black");
-    costumersHolder.className = "";
-    costumersHolder.classList.add("list-view-style");
+listViewCostumers.addEventListener("click", () => {
     renderCostumers(costumers, false);
+});
+cardViewOrders.addEventListener("click", () => {
+    renderOrders(orders, true);
+});
+listViewOrders.addEventListener("click", () => {
+    renderOrders(orders, false);
 });
