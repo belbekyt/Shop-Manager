@@ -48,10 +48,10 @@ const createCostumerLists = (costumer) => {
 };
 export const renderCostumers = (costumers, structure) => {
     costumersHolder.innerHTML = "";
+    costumersHolder.className = "";
     if (structure) {
         listViewCostumers.classList.remove("text-black");
         cardsViewCostumers.classList.add("text-black");
-        costumersHolder.className = "";
         costumersHolder.classList.add("card-view-style");
         costumers.forEach((costumer) => {
             costumersHolder.appendChild(createCostumerCards(costumer));
@@ -60,7 +60,6 @@ export const renderCostumers = (costumers, structure) => {
     else {
         cardsViewCostumers.classList.remove("text-black");
         listViewCostumers.classList.add("text-black");
-        costumersHolder.className = "";
         costumersHolder.classList.add("list-view-style");
         costumers.forEach((costumer) => {
             costumersHolder.appendChild(createCostumerLists(costumer));

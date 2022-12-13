@@ -1,16 +1,19 @@
 import { Order } from "./orders.js";
+import { Costumer, costumers } from "./costumers.js";
 
 const ordersHolder: HTMLElement = document.querySelector("#orders-holder");
 const cardViewOrders: HTMLElement = document.querySelector("#card-view-orders");
 const listViewOrders: HTMLElement = document.querySelector("#list-view-orders");
+let x: string;
 
 const createOrderCard = (order: Order) => {
+    checkCostumerName(order.costumerid, costumers);
     const orderElement: HTMLElement = document.createElement("div");
     orderElement.classList.add("card");
     orderElement.innerHTML = `
         <div class="orders-card-heading">Order ${order.orderid}</div>
         <div class="orders-card-body">
-            <p>Costumer: ${order.costumerid}</p>
+            <p>Costumer: ${x}</p>
             <p>Items: ${order.items}</p>
             <p>Cost: ${order.total} PLN</p>
         </div>
@@ -20,16 +23,25 @@ const createOrderCard = (order: Order) => {
 }
 
 const createOrderList = (order: Order) => {
+    checkCostumerName(order.costumerid, costumers);
     const orderElement: HTMLElement = document.createElement("div");
     orderElement.classList.add("card-list");
     orderElement.innerHTML = `
         <p class="list-element">Order ${order.orderid}</p>
-        <p class="list-element">Costumer: ${order.costumerid}</p>
+        <p class="list-element">Costumer: ${x}</p>
         <p class="list-element">Items: ${order.items}</p>
         <p class="list-element">Cost: ${order.total} PLN</p>
     `;
 
     return orderElement;
+}
+
+const checkCostumerName = (id: number, costumers: object[]) => {
+    costumers.forEach((costumer: Costumer) => {
+        if(costumer.id == id){
+            x = costumer.name + " " + costumer.surname;
+        }
+    })
 }
 
 export const renderOrders = (orders: object[], structure: boolean) => {
