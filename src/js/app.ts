@@ -8,6 +8,7 @@ renderCostumers(costumers, true);
 
 const cardsViewCostumers: HTMLElement = document.querySelector("#card-view-costumers");
 const listViewCostumers: HTMLElement = document.querySelector("#list-view-costumers");
+const addCostumer: HTMLElement = document.querySelector("#add-costumer");
 
 const cardViewOrders: HTMLElement = document.querySelector("#card-view-orders");
 const listViewOrders: HTMLElement = document.querySelector("#list-view-orders");
