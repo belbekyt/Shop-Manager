@@ -17,3 +17,4 @@ const order8 = new Order(8, 3, 147.89, 3);
 const order9 = new Order(9, 5, 270.50, 5);
 const order10 = new Order(10, 10, 200.00, 4);
 export let orders = [order1, order2, order3, order4, order5, order6, order7, order8, order9, order10];
+orders[0];

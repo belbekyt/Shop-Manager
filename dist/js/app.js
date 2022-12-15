@@ -5,6 +5,7 @@ import { renderOrders } from "./render-orders.js";
 renderCostumers(costumers, true);
 const cardsViewCostumers = document.querySelector("#card-view-costumers");
 const listViewCostumers = document.querySelector("#list-view-costumers");
+const addCostumer = document.querySelector("#add-costumer");
 const cardViewOrders = document.querySelector("#card-view-orders");
 const listViewOrders = document.querySelector("#list-view-orders");
 cardsViewCostumers.addEventListener("click", () => {
