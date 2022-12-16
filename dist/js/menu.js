@@ -29,34 +29,34 @@ const menuHandler = (id) => {
     switch (id) {
         case "menu-costumers":
             hide();
-            costumersSection.classList.remove("hidden");
-            costumersHolder.classList.remove("hidden");
+            costumersSection.classList.remove("hidden-up");
+            costumersHolder.classList.remove("hidden-up");
             break;
         case "menu-orders":
             hide();
-            ordersSection.classList.remove("hidden");
-            ordersHolder.classList.remove("hidden");
+            ordersSection.classList.remove("hidden-up");
+            ordersHolder.classList.remove("hidden-up");
             renderOrders(orders, true);
             break;
         case "menu-create-order":
             hide();
-            createOrderSection.classList.remove("hidden");
-            createOrderHolder.classList.remove("hidden");
+            createOrderSection.classList.remove("hidden-up");
+            createOrderHolder.classList.remove("hidden-up");
             break;
         case "menu-create-costumer":
             hide();
-            createCostumerSection.classList.remove("hidden");
-            createCostumerHolder.classList.remove("hidden");
+            createCostumerSection.classList.remove("hidden-up");
+            createCostumerHolder.classList.remove("hidden-up");
             break;
     }
 };
 const hide = () => {
-    costumersSection.classList.add("hidden");
-    ordersSection.classList.add("hidden");
-    createOrderSection.classList.add("hidden");
-    createCostumerSection.classList.add("hidden");
-    costumersHolder.classList.add("hidden");
-    ordersHolder.classList.add("hidden");
-    createOrderHolder.classList.add("hidden");
-    createCostumerHolder.classList.add("hidden");
+    costumersSection.classList.add("hidden-up");
+    ordersSection.classList.add("hidden-up");
+    createOrderSection.classList.add("hidden-up");
+    createCostumerSection.classList.add("hidden-up");
+    costumersHolder.classList.add("hidden-up");
+    ordersHolder.classList.add("hidden-up");
+    createOrderHolder.classList.add("hidden-up");
+    createCostumerHolder.classList.add("hidden-up");
 };

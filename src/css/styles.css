@@ -49,3 +49,11 @@
 .orders-card-body{
     @apply text-center py-2.5;
 }
+
+.add-costumer{
+    @apply mt-3 w-4/5 mx-auto;
+}
+
+.hidden-up{
+    @apply hidden;
+}

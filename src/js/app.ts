@@ -13,6 +13,8 @@ const addCostumer: HTMLElement = document.querySelector("#add-costumer");
 const cardViewOrders: HTMLElement = document.querySelector("#card-view-orders");
 const listViewOrders: HTMLElement = document.querySelector("#list-view-orders");
 
+const addCostumerHolder: HTMLElement = document.querySelector("#add-costumer-holder");
+
 cardsViewCostumers.addEventListener("click", () => {
     renderCostumers(costumers, true);
 })
@@ -27,4 +29,8 @@ cardViewOrders.addEventListener("click", () => {
 
 listViewOrders.addEventListener("click", () => {
     renderOrders(orders, false);
+})
+
+addCostumer.addEventListener("click", () => {
+    addCostumerHolder.classList.remove("hidden-up");
 })

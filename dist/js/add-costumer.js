@@ -1,4 +1,5 @@
 import { Costumer, costumers } from "./costumers.js";
+import { renderCostumers } from "./render-costumers.js";
 const sendForm = document.querySelector("#submitCostumerForm");
 const nameInput = document.querySelector("#nameInput");
 const surnameInput = document.querySelector("#surnameInput");
@@ -14,7 +15,8 @@ sendForm.addEventListener("click", (e) => {
     const city = cityInput.value;
     const street = streetInput.value;
     const id = costumers.length + 1;
-    const sex = sexInput.value;
-    console.log(sex);
-    const costumer = new Costumer(id, name, surname, city, street, country, true);
+    const sex = sexInput.checked;
+    const costumer = new Costumer(id, name, surname, city, street, country, sex);
+    costumers.push(costumer);
+    renderCostumers(costumers, true);
 });
