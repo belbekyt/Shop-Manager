@@ -3,6 +3,8 @@ import { Costumer } from "./costumers.js";
 const costumersHolder: HTMLElement = document.querySelector("#costumers-holder");
 const cardsViewCostumers: HTMLElement = document.querySelector("#card-view-costumers");
 const listViewCostumers: HTMLElement = document.querySelector("#list-view-costumers");
+const addCostumerHolder: HTMLElement = document.querySelector("#add-costumer-holder");
+const addCostumer: HTMLElement = document.querySelector("#add-costumer");
 
 const costumerPhoto = (sex: boolean) => {
     if(sex){
@@ -57,6 +59,8 @@ const createCostumerLists = (costumer: Costumer) => {
 }
 
 export const renderCostumers = (costumers: object[], structure: boolean) => {
+    addCostumerHolder.classList.add("hidden-up");
+    addCostumer.classList.remove("text-black");
     costumersHolder.innerHTML = "";
     costumersHolder.className = "";
 

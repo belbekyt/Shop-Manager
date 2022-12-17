@@ -1,6 +1,8 @@
 const costumersHolder = document.querySelector("#costumers-holder");
 const cardsViewCostumers = document.querySelector("#card-view-costumers");
 const listViewCostumers = document.querySelector("#list-view-costumers");
+const addCostumerHolder = document.querySelector("#add-costumer-holder");
+const addCostumer = document.querySelector("#add-costumer");
 const costumerPhoto = (sex) => {
     if (sex) {
         return '<img class="card-photo" src="dist/photo/men.png" alt="men profile picture">';
@@ -47,6 +49,8 @@ const createCostumerLists = (costumer) => {
     return costumerElement;
 };
 export const renderCostumers = (costumers, structure) => {
+    addCostumerHolder.classList.add("hidden-up");
+    addCostumer.classList.remove("text-black");
     costumersHolder.innerHTML = "";
     costumersHolder.className = "";
     if (structure) {

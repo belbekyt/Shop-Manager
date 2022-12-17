@@ -7,8 +7,10 @@ const countryInput = document.querySelector("#countryInput");
 const cityInput = document.querySelector("#cityInput");
 const streetInput = document.querySelector("#streetInput");
 const sexInput = document.querySelector("#sexInput");
+const addCostumerHolder = document.querySelector("#add-costumer-holder");
 sendForm.addEventListener("click", (e) => {
     e.preventDefault();
+    addCostumerHolder.classList.add("hidden-up");
     const name = nameInput.value;
     const surname = surnameInput.value;
     const country = countryInput.value;
@@ -16,6 +18,12 @@ sendForm.addEventListener("click", (e) => {
     const street = streetInput.value;
     const id = costumers.length + 1;
     const sex = sexInput.checked;
+    nameInput.value = "";
+    surnameInput.value = "";
+    countryInput.value = "";
+    cityInput.value = "";
+    streetInput.value = "";
+    sexInput.checked = false;
     const costumer = new Costumer(id, name, surname, city, street, country, sex);
     costumers.push(costumer);
     renderCostumers(costumers, true);
