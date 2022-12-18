@@ -1,21 +1,6 @@
 import { renderOrders } from "./render-orders.js";
 import { orders } from "./orders.js";
 
-const costumersBtn: HTMLElement = document.querySelector("#menu-costumers");
-const ordersBtn: HTMLElement = document.querySelector("#menu-orders");
-const createOrderBtn: HTMLElement = document.querySelector("#menu-create-order");
-const createCostumerBtn: HTMLElement = document.querySelector("#menu-create-costumer");
-
-const costumersSection: HTMLElement = document.querySelector("#costumers-section");
-const ordersSection: HTMLElement = document.querySelector("#orders-section");
-const createOrderSection: HTMLElement = document.querySelector("#orders-create-section");
-const createCostumerSection: HTMLElement = document.querySelector("#costumer-create-section");
-
-const costumersHolder: HTMLElement = document.querySelector("#costumers-holder");
-const ordersHolder: HTMLElement = document.querySelector("#orders-holder");
-const createOrderHolder: HTMLElement = document.querySelector("#create-order");
-const createCostumerHolder: HTMLElement = document.querySelector("#create-costumer");
-
 //idk why but this.id or e.target.id is not working so i can't use foreach
 costumersBtn.addEventListener("click", () => {
     menuHandler(costumersBtn.id);
@@ -60,12 +45,7 @@ const menuHandler = (id: string) => {
 }
 
 const hide = () => {
-    costumersSection.classList.add("hidden-up");
-    ordersSection.classList.add("hidden-up");
-    createOrderSection.classList.add("hidden-up");
-    createCostumerSection.classList.add("hidden-up");
-    costumersHolder.classList.add("hidden-up");
-    ordersHolder.classList.add("hidden-up");
-    createOrderHolder.classList.add("hidden-up");
-    createCostumerHolder.classList.add("hidden-up");
+    hideList.forEach(elem => {
+        elem.classList.add("hidden-up");
+    });  
 }

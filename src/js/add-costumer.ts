@@ -1,15 +1,6 @@
 import { Costumer, costumers } from "./costumers.js";
 import { renderCostumers } from "./render-costumers.js";
 
-const sendForm: HTMLButtonElement = document.querySelector("#submitCostumerForm");
-const nameInput: HTMLInputElement = document.querySelector("#nameInput");
-const surnameInput: HTMLInputElement = document.querySelector("#surnameInput");
-const countryInput: HTMLInputElement = document.querySelector("#countryInput");
-const cityInput: HTMLInputElement = document.querySelector("#cityInput");
-const streetInput: HTMLInputElement = document.querySelector("#streetInput");
-const sexInput: HTMLInputElement = document.querySelector("#sexInput");
-const addCostumerHolder: HTMLElement = document.querySelector("#add-costumer-holder");
-
 sendForm.addEventListener("click", (e) => {
     e.preventDefault();
 

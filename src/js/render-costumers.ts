@@ -1,11 +1,5 @@
 import { Costumer } from "./costumers.js";
 
-const costumersHolder: HTMLElement = document.querySelector("#costumers-holder");
-const cardsViewCostumers: HTMLElement = document.querySelector("#card-view-costumers");
-const listViewCostumers: HTMLElement = document.querySelector("#list-view-costumers");
-const addCostumerHolder: HTMLElement = document.querySelector("#add-costumer-holder");
-const addCostumer: HTMLElement = document.querySelector("#add-costumer");
-
 const costumerPhoto = (sex: boolean) => {
     if(sex){
         return '<img class="card-photo" src="dist/photo/men.png" alt="men profile picture">';
@@ -59,7 +53,10 @@ const createCostumerLists = (costumer: Costumer) => {
 }
 
 export const renderCostumers = (costumers: object[], structure: boolean) => {
+    costumersSection.classList.remove("hidden-up");
+    costumersHolder.classList.remove("hidden-up");
     addCostumerHolder.classList.add("hidden-up");
+    createCostumerSection.classList.add("hidden-up");
     addCostumer.classList.remove("text-black");
     costumersHolder.innerHTML = "";
     costumersHolder.className = "";

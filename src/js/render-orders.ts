@@ -1,9 +1,6 @@
 import { Order } from "./orders.js";
 import { Costumer, costumers } from "./costumers.js";
 
-const ordersHolder: HTMLElement = document.querySelector("#orders-holder");
-const cardViewOrders: HTMLElement = document.querySelector("#card-view-orders");
-const listViewOrders: HTMLElement = document.querySelector("#list-view-orders");
 let x: string;
 
 const createOrderCard = (order: Order) => {

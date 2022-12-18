@@ -1,7 +1,4 @@
 import { costumers } from "./costumers.js";
-const ordersHolder = document.querySelector("#orders-holder");
-const cardViewOrders = document.querySelector("#card-view-orders");
-const listViewOrders = document.querySelector("#list-view-orders");
 let x;
 const createOrderCard = (order) => {
     checkCostumerName(order.costumerid, costumers);
