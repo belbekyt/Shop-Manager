@@ -1,7 +1,7 @@
 import { Costumer, costumers } from "./costumers.js";
 import { renderCostumers } from "./render-costumers.js";
 
-sendForm.addEventListener("click", (e) => {
+sendFormCostumer.addEventListener("click", (e) => {
     e.preventDefault();
 
     addCostumerHolder.classList.add("hidden-up");

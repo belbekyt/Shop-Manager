@@ -19,8 +19,9 @@ const cardViewOrders: HTMLElement = document.querySelector("#card-view-orders");
 const listViewOrders: HTMLElement = document.querySelector("#list-view-orders");
 
 const addCostumer: HTMLElement = document.querySelector("#add-costumer");
+const addOrder: HTMLElement = document.querySelector("#add-order");
 
-const sendForm: HTMLButtonElement = document.querySelector("#submitCostumerForm");
+const sendFormCostumer: HTMLButtonElement = document.querySelector("#submitCostumerForm");
 const nameInput: HTMLInputElement = document.querySelector("#nameInput");
 const surnameInput: HTMLInputElement = document.querySelector("#surnameInput");
 const countryInput: HTMLInputElement = document.querySelector("#countryInput");
@@ -28,5 +29,10 @@ const cityInput: HTMLInputElement = document.querySelector("#cityInput");
 const streetInput: HTMLInputElement = document.querySelector("#streetInput");
 const sexInput: HTMLInputElement = document.querySelector("#sexInput");
 const addCostumerHolder: HTMLElement = document.querySelector("#add-costumer-holder");
+
+const sendFormOrder: HTMLButtonElement = document.querySelector("#submitOrderForm");
+const costumerIdInput: HTMLInputElement = document.querySelector("#costumerIdInput");
+const countInput: HTMLInputElement = document.querySelector("#countInput");
+const costInput: HTMLInputElement = document.querySelector("#costInput");
 
 const hideList: HTMLElement[] = [costumersSection, ordersSection, createOrderSection, createCostumerSection, costumersHolder, ordersHolder, createOrderHolder, createCostumerHolder];

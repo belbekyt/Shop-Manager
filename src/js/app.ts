@@ -29,3 +29,11 @@ addCostumer.addEventListener("click", () => {
     cardsViewCostumers.classList.remove("text-black");
     addCostumer.classList.add("text-black");
 })
+
+addOrder.addEventListener("click", () => {
+    ordersHolder.classList.add("hidden-up");
+    createOrderHolder.classList.remove("hidden-up");
+    listViewOrders.classList.remove("text-black");
+    cardViewOrders.classList.remove("text-black");
+    addOrder.classList.add("text-black");
+})

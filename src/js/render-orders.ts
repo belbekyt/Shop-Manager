@@ -42,6 +42,11 @@ const checkCostumerName = (id: number, costumers: object[]) => {
 }
 
 export const renderOrders = (orders: object[], structure: boolean) => {
+    ordersSection.classList.remove("hidden-up");
+    ordersHolder.classList.remove("hidden-up");
+    createOrderSection.classList.add("hidden-up");
+    createOrderHolder.classList.add("hidden-up");
+    addOrder.classList.remove("text-black");
     ordersHolder.innerHTML = "";
     ordersHolder.className = "";
 
