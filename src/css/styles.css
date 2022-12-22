@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 .card-view-style{
-    @apply grid grid-cols-5 gap-10 w-full px-8 pt-10;
+    @apply grid grid-cols-1 gap-10 w-full px-8 pt-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5;
 }
 
 .list-view-style{
-    @apply w-full px-8 pt-10;
+    @apply w-full px-2 md:px-8 pt-10 overflow-x-hidden;
 }
 
 .card{
@@ -27,7 +27,7 @@
 }
 
 .card-photo{
-    @apply w-20 mr-6;
+    @apply w-8 md:w-16 lg:w-20 mx-1 md:mx-3;
 }
 
 .card-link{
@@ -35,11 +35,11 @@
 }
 
 .card-list{
-    @apply flex border-t border-gray-600 p-5 text-xl
+    @apply flex border-t border-gray-600 p-3 lg:p-5 text-sm md:text-lg lg:text-2xl;
 }
 
 .list-element{
-    @apply p-6;
+    @apply p-1 md:p-4 lg:p-6;
 }
 
 .orders-card-heading{
